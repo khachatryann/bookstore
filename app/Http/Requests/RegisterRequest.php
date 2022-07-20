@@ -27,7 +27,7 @@ class RegisterRequest extends FormRequest
             'name' => 'required',
             'birth_date' => 'date',
             'avatar' => 'required|file|mimes:jpg,jpeg,png',
-            'role_id' => 'required',
+//            'role_id' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:4'
         ];
@@ -40,7 +40,7 @@ class RegisterRequest extends FormRequest
             "avatar.required" => "This is required too bro",
             "avatar.file" => "Please choose file",
             "avatar.mimes" => "File must be jpg,jpeg or png",
-            "role_id.required" => "This is required",
+//            "role_id.required" => "This is required",
             "email.required" => "This is required․",
             "email.email" => "Invalid email",
             "email.unique" => "Profile exists․",

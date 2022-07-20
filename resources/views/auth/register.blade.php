@@ -34,13 +34,13 @@
                         </span>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="role_id" class="form-label">Role ID</label>
-                        <input type="number" class="form-control {{ $errors->has('role_id') ? 'is_invalid' : '' }}" min="1" id="role_id" placeholder="Number" name="role_id">
-                        <span class="invalid-feedback">
-                            {{ $errors->first('role_id') }}
-                        </span>
-                    </div>
+{{--                    <div class="mb-3">--}}
+{{--                        <label for="role_id" class="form-label">Role ID</label>--}}
+{{--                        <input type="number" class="form-control {{ $errors->has('role_id') ? 'is_invalid' : '' }}" min="1" id="role_id" placeholder="Number" name="role_id">--}}
+{{--                        <span class="invalid-feedback">--}}
+{{--                            {{ $errors->first('role_id') }}--}}
+{{--                        </span>--}}
+{{--                    </div>--}}
 
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>

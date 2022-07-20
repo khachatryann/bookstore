@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\BookController;
 
 
 
@@ -20,12 +21,14 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 
-//    Route::prefix(['roles'])->group(function () {
-//        Route::get('/', [RoleController::class, 'index'])->name('role-list');
-//    });
-    Route::get('/roles', [RoleController::class, 'index'])->name('role-list');
-    Route::get('/roles/new', [RoleController::class, 'create'])->name('role-create');
-    Route::post('/roles/new/store', [RoleController::class, 'store'])->name('role-store');
+    Route::prefix('roles')->group(function () {
+        Route::get('/', [RoleController::class, 'index'])->name('role-list');
+
+      //    Route::get('/new', [RoleController::class, 'create'])->name('role-create');
+     //    Route::post('/new/store', [RoleController::class, 'store'])->name('role-store');
+   });
+
+    Route::middleware(['isAdmin'])->resource('books', BookController::class);
 });
 
 

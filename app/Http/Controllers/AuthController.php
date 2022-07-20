@@ -32,7 +32,7 @@ class AuthController extends Controller
         $data = [
             'name' => $request['name'],
             'birth_date' => $request['birth_date'],
-            'avatar' => $request['avatar'],
+            'avatar' => $avatar,
             'role_id' => $request['role_id'],
             'email' => $request['email'],
             'password' => Hash::make($request['password'])
