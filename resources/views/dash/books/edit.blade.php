@@ -5,10 +5,10 @@
 @section('content')
 
     <div class="container">
-        <a href="{{ route("books.index") }}" class="btn btn-primary mt-2">Back</a>
+        <a href="{{ route("books.index") }}" class="btn btn-secondary mt-3">Back</a>
 
 
-        <form action="{{ route("books.update", $one_book['id']) }}" class="w-50" method="post">
+        <form action="{{ route("books.update", $one_book['id']) }}" class="w-50 mt-2" method="post">
             @csrf
             @method("patch")
 

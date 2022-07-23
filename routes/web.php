@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RoleController;
@@ -17,18 +18,13 @@ Route::middleware(['guest'])->group(function () {
 
 
 Route::middleware(['auth'])->group(function () {
+
     Route::get('/home', [AuthController::class, 'home'])->name('home');
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
-
-    Route::prefix('roles')->group(function () {
-        Route::get('/', [RoleController::class, 'index'])->name('role-list');
-
-      //    Route::get('/new', [RoleController::class, 'create'])->name('role-create');
-     //    Route::post('/new/store', [RoleController::class, 'store'])->name('role-store');
-   });
-
     Route::middleware(['isAdmin'])->resource('books', BookController::class);
+    Route::middleware(['isOperator'])->resource('customers', CustomerController::class);
+
 });
 
 
